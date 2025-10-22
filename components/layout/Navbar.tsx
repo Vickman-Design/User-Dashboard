@@ -1,20 +1,21 @@
 "use client";
 import { Bell, Menu } from "lucide-react";
+import Image from "next/image";
 
 interface NavbarProps {
-  onMenuClick?: () => void; // function to toggle mobile sidebar
+  onMenuClick?: () => void; 
 }
 
 export default function Navbar({ onMenuClick }: NavbarProps) {
   return (
     <header className="flex items-center justify-between px-4 sm:px-6 py-4 bg-white border-b border-gray-200">
-      {/* === Left Section: Hamburger + Search === */}
       <div className="flex items-center gap-3">
-        {/* Hamburger menu for mobile */}
-       <button className="md:hidden p-2 rounded-md hover:bg-gray-100 transition" onClick={onMenuClick}>
-  <Menu className="w-6 h-6 text-gray-700" />
-</button>
-
+        <button
+          className="md:hidden p-2 rounded-md hover:bg-gray-100 transition"
+          onClick={onMenuClick}
+        >
+          <Menu className="w-6 h-6 text-gray-700" />
+        </button>
 
         {/* Search input */}
         <div className="relative">
@@ -39,7 +40,6 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
         </div>
       </div>
 
-      {/* === Right Section: Icons + Profile === */}
       <div className="flex items-center gap-4 sm:gap-6">
         {/* Notification icon */}
         <div className="flex items-center gap-3">
@@ -49,11 +49,12 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
         </div>
 
         {/* Profile image */}
-        <div className="w-9 h-9 rounded-full border border-gray-200 overflow-hidden cursor-pointer">
-          <img
+        <div className="w-9 h-9 rounded-full border border-gray-200 overflow-hidden cursor-pointer relative">
+          <Image
             src="/profile.jpg"
             alt="User Profile"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
       </div>
