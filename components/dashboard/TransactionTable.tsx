@@ -19,11 +19,11 @@ export default function TransactionTable() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Active":
-        return "text-green-600";
+        return "text-green-400";
       case "Suspended":
-        return "text-red-500";
+        return "text-red-300";
       case "Pending":
-        return "text-yellow-500";
+        return "text-yellow-300";
       default:
         return "text-gray-600";
     }

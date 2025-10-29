@@ -5,6 +5,11 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    "text-[#4CAF50]",
+    "text-[#F44336]",
+    "text-[#FFC107]",
+  ],
   theme: {
     extend: {
       colors: {
